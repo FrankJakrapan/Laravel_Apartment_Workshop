@@ -15,12 +15,48 @@
     @apply w-full p-2 bg-orange-500 text-white rounded-md;
 }
 
+.btn-primary {
+    @apply bg-orange-500 text-white px-6 py-3 rounded-2xl hover:bg-orange-600 shadow-gray-500 shadow-md;
+}
+
+.btn-danger {
+    @apply bg-red-500 text-white px-6 py-3 rounded-2xl hover:bg-red-600 shadow-gray-500 shadow-md;
+}
+
+.btn-secondary {
+    @apply bg-gray-500 text-white px-6 py-3 rounded-2xl hover:bg-gray-600 shadow-gray-500 shadow-md;
+}
+
+.btn-warning {
+    @apply bg-yellow-500 text-white px-6 py-3 rounded-2xl hover:bg-yellow-600 shadow-gray-500 shadow-md;
+}
+
+.btn-success {
+    @apply bg-green-500 text-white px-6 py-3 rounded-2xl hover:bg-green-600 shadow-gray-500 shadow-md;
+}
+
+.btn-info {
+    @apply bg-blue-500 text-white px-6 py-3 rounded-2xl hover:bg-blue-600 shadow-gray-500 shadow-md;
+}
+
 .form-control {
-    @apply w-full p-2 border border-gray-300 rounded-md;
+    @apply w-full p-2 bg-white border border-gray-300 rounded-md;
 }
 
 .content {
     @apply ml-80 mt-3 p-4 bg-gray-300 rounded-md;
+}
+
+.content-header {
+    @apply mb-3 text-xl border-b border-gray-600 pb-3;
+}  
+
+.alert {
+    @apply p-3 rounded-md shadow-lg pl-5;
+}
+
+.alert-success {
+    @apply bg-green-600 text-white;
 }
 
 .sidebar {
@@ -45,4 +81,4 @@
 
 .menu li {
     @apply p-3 pl-5 rounded-md hover:bg-orange-400 hover:text-gray-800;
-}
+} 

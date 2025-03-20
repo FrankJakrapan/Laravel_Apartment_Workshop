@@ -38,6 +38,9 @@ class Signin extends Component
             if(!$user){
                 $this->error = 'Username or password is incorrect';
             }else{
+                session()->put('user_id', $user->id);
+                session()->put('user_name', $user->name);
+
                 $this->redirect('/dashboard');
             }
         }

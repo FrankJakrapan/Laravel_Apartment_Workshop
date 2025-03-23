@@ -39,7 +39,8 @@
         </div>
 
         <button type="submit" class="btn-primary mt-5">
-            <i class="fa-solid fa-check mr-2"></i> บันทึก
+            <i class="fa-solid fa-check mr-2"></i> 
+            บันทึก
         </button>
 
         @if ($flashMessage)

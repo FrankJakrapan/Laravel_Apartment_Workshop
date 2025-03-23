@@ -9,24 +9,27 @@ use Illuminate\Support\Facades\Storage;
 
 class Company extends Component
 {
+
     use WithFileUploads;
 
     public $name, $address, $phone, $tax_code, $logo;
     public $logoUrl;
     public $flashMessage;
 
-    public function mount(){
+    public function mount()
+    {
         $this->fetchData();
     }
 
-    public function fetchData(){
+    public function fetchData()
+    {
         $organization = OrganizationModel::first();
         $this->name = $organization->name ?? '';
         $this->address = $organization->address ?? '';
         $this->phone = $organization->phone ?? '';
         $this->tax_code = $organization->tax_code ?? '';
 
-        if(isset($organization->logo)){
+        if (isset($organization->logo)) {
             $this->logoUrl = Storage::disk('public')->url($organization->logo);
         }
     }
@@ -36,24 +39,25 @@ class Company extends Component
         return view('livewire.company');
     }
 
-    public function save(){
+    public function save()
+    {
         $logo = '';
 
-        if($this->logo){
+        if ($this->logo) {
             $logo = $this->logo->store('organizations', 'public');
         }
 
-        if(OrganizationModel::count() == 0){
-            $organization = new OrganizationModel;
-        }else{
+        if (OrganizationModel::count() == 0) {
+            $organization = new OrganizationModel();
+        } else {
             $organization = OrganizationModel::first();
 
-            if($organization->logo){
-                if($logo != ''){
-                    $Storage = Storage::disk('public');
+            if ($organization->logo) {
+                if ($logo != '') {
+                    $storage = Storage::disk('public');
 
-                    if($Storage->exists($organization->logo)){
-                        $Storage->delete($organization->logo);
+                    if ($storage->exists($organization->logo)) {
+                        $storage->delete($organization->logo);
                     }
                 }
             }
@@ -66,7 +70,7 @@ class Company extends Component
         $organization->logo = $logo;
         $organization->save();
 
-        $this->flashMessage = 'success';
+        $this->flashMessage = 'saved successfully!';
         $this->fetchData();
     }
 }

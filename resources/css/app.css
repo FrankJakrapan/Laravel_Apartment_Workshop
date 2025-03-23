@@ -82,3 +82,7 @@
 .menu li {
     @apply p-3 pl-5 rounded-md hover:bg-orange-400 hover:text-gray-800;
 } 
+
+.active {
+    @apply bg-orange-300 text-gray-800;
+}

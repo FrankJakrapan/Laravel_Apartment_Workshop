@@ -1,3 +1,3 @@
-@livewire('navbar')
+{{-- @livewire('navbar') --}}
 
 @livewire('sidebar')

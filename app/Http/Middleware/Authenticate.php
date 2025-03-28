@@ -16,13 +16,11 @@ class Authenticate
      */
     public function handle(Request $request, Closure $next): Response
     {       
-        // dd(Auth::check(), session()->all(), request()->cookie());exit;
-
-        if (Auth::check()) {
+        if (session()->has('user_id') && session()->has('user_name')) {
             return $next($request);
+        } else {
+            return redirect()->route('login');
         }
-
-        return redirect()->route('login');
         
     }
 }

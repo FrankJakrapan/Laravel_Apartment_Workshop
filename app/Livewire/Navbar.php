@@ -21,8 +21,8 @@ class Navbar extends Component{
     public function editProfile(){
         $this->showModalEdit = true;
 
-        $use = User::find(session()->get('user_id'));
-        $this->username = $use->name;
+        $user = User::find(session()->get('user_id'));
+        $this->username = $user->name;
     }
 
     public function updateProfile(){

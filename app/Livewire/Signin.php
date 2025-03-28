@@ -37,9 +37,9 @@ class Signin extends Component
             
             if($user && Hash::check($this->password, $user->password)){
 
-                Auth::loginUsingId($user->id);
-                // session()->put('user_id', $user->id);
-                // session()->put('user_name', $user->name);
+                // Auth::loginUsingId($user->id);
+                session()->put('user_id', $user->id);
+                session()->put('user_name', $user->name);
 
                 $this->redirect('/dashboard');
             }else{

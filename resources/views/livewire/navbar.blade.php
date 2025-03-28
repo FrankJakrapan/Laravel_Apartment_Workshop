@@ -1,8 +1,8 @@
 <div class="navbar">
     <div class="flex items-center justify-between">
         <div>
-            <i class="fa-solid fa-user me-2"></i>
-            <span class="username">Admin System {{ $user_name }}</span>
+            <i class="fa-solid fa-user text-xl me-2"></i>
+            <span class="username text-2xl">{{ $user_name }}</span>
         </div>
         <div>
             <button
@@ -12,8 +12,8 @@
                 <i class="fa-solid fa-user mr-2"></i>
                 แก้ไขข้อมูลส่วนตัว
             </button>
-            <button wire:click="showModal = true" class="border border-orange-400 text-orange-400 px-6 py-3 rounded-2xl">
-                <span>Logout</span>
+            <button wire:click="showModal = true" class="border border-orange-400 text-orange-400 px-6 py-3 rounded-2xl hover:bg-orange-500 hover:text-white">
+                Logout
                 <i class="fa-solid fa-sign-out ms-3"></i>
             </button>
         </div>
@@ -83,7 +83,12 @@
                 ยกเลิก
             </button>
         </div>
-
+        @if ($saveSuccess)
+            <div class="alert-success alert">
+                <i class="fa fa-check mr-2"></i>
+                บันทึกข้อมูลสําเร็จ
+            </div>
+        @endif
     </x-modal>
 </div>
 

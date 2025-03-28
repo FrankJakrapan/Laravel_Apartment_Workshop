@@ -16,6 +16,8 @@ class Authenticate
      */
     public function handle(Request $request, Closure $next): Response
     {       
+        // dd(session()->all());exit;
+
         if (session()->has('user_id') && session()->has('user_name')) {
             return $next($request);
         } else {

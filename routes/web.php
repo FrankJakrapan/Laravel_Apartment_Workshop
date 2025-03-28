@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\Authenticate;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\RoomController;
-use App\Http\Middleware\Authenticate;
+use App\Http\Controllers\CustomerComtroller;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,6 +15,7 @@ Route::middleware([Authenticate::class])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard']);
     Route::get('/company/index', [CompanyController::class, 'index']);
     Route::get('/room', [RoomController::class, 'index']);
+    Route::get('/customer', [CustomerComtroller::class, 'index']);
 });
 
 

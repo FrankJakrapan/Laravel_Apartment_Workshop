@@ -5,7 +5,9 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
-use illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Hash;
+
+use function Laravel\Prompts\clear;
 
 class Navbar extends Component{
 
@@ -17,12 +19,15 @@ class Navbar extends Component{
     public $password_confirm;
     public $errorUsername;
     public $errorPassword;
+    public $saveSuccess = false;
 
     public function editProfile(){
         $this->showModalEdit = true;
 
         $user = User::find(session()->get('user_id'));
         $this->username = $user->name;
+        $this->saveSuccess = false;
+        // $this->clearErrors();
     }
 
     public function updateProfile(){
@@ -41,7 +46,17 @@ class Navbar extends Component{
         $user->password = $this->password ?? $user->password;
         $user->save();
 
-        $this->showModalEdit = false;
+        // $this->showModalEdit = false;
+        $this->resetForm();
+        $this->saveSuccess = true;
+
+        // $this->clearErrors();
+    }
+
+    public function resetForm() {
+        // $this->username = '';
+        $this->password = '';
+        $this->password_confirm = '';
     }
 
     public function mount(){

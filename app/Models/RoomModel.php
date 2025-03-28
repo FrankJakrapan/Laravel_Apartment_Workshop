@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class RoomModel extends Model
 {
-    protected $table = 'room';
-    protected $fillable = ['name', 'price_per_day', 'price_per_month', 'status'];
+    protected $table = 'rooms';
+    protected $fillable = ['name', 'price_per_day', 'price_per_month', 'status', 'stay_type', 'price'];
 
     public $timestamps = false;
 }

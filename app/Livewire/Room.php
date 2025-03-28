@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use  App\Models\RoomModel;
+use App\Models\RoomModel;
 
 class Room extends Component
 {

@@ -15,9 +15,9 @@
             <thead >
                 <tr>
                     <th class="text-left">ห้องพัก</th>
-                    <th class="text-right" width="150px">ค่าเช่าต่อวัน</th>
-                    <th class="text-right" width="150px">ค่าเช่าต่อเดือน</th>
-                    <th width="130px">แก้ไข</th>
+                    <th class="text-right" width="25%">ค่าเช่าต่อวัน</th>
+                    <th class="text-right" width="25%">ค่าเช่าต่อเดือน</th>
+                    <th class="text-right" width="20%">แก้ไข</th>
                 </tr>
             </thead>
 
@@ -25,8 +25,8 @@
                 @foreach ($rooms as $room)
                     <tr>
                         <td>{{ $room->name }}</td>
-                        <td class="text-right">{{ number_format($room->price_per_day) }} บาท</td>
-                        <td class="text-right">{{ number_format($room->price_per_month) }} บาท</td>
+                        <td class="text-right">{{ number_format($room->price_per_day) }}</td>
+                        <td class="text-right">{{ number_format($room->price_per_month) }}</td>
                         <td class="text-right">
                             <button class="btn-edit" wire:click="openModalEdit({{ $room->id }})">
                                 <i class="fa-solid fa-pencil mr-2"></i>

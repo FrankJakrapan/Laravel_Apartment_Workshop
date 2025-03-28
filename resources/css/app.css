@@ -100,7 +100,7 @@
 }
 
 .table th {
-    @apply bg-gray-400 p-2 pl-3;
+    @apply bg-orange-400 p-2 pl-3;
 }
 
 .table th:first-child {
@@ -117,6 +117,14 @@
 
 .table tr:last-child td:first-child {
     @apply rounded-bl-md;
+}
+
+tbody tr {
+    @apply border-b border-gray-300;
+}
+
+tbody tr:last-child {
+    @apply border-b-0;
 }
 
 .alert-danger {

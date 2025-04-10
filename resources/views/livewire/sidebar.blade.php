@@ -9,7 +9,7 @@
                     <i class="fa-solid fa-chart-line me-2"></i>
                     Dashboard
                 </li>
-                <li wire:click="changeMenu('expense/index')"@if($currentMenu == 'expense/index') class="active" @endif>
+                <li wire:click="changeMenu('pay')"@if($currentMenu == 'pay') class="active" @endif>
                     <i class="fa-solid fa-wallet me-2"></i>
                     บันทึกค่าใช้จ่าย
                 </li>
@@ -19,7 +19,7 @@
                 </li>
                 <li wire:click="changeMenu('customer')"@if($currentMenu == 'customer') class="active" @endif>
                     <i class="fa-solid fa-user me-2"></i>
-                    Profile
+                    ผู้เข้าพัก
                 </li>
                 <li wire:click="changeMenu('user/index')"@if($currentMenu == 'user/index') class="active" @endif>
                     <i class="fa-solid fa-gear me-2"></i>

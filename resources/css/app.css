@@ -104,7 +104,7 @@
 }
 
 .table th {
-    @apply px-5 pl-4 p-3 bg-orange-400 text-xl;
+    @apply px-5 pl-4 p-3 bg-orange-400;
 }
 
 .table th:first-child {
@@ -116,7 +116,7 @@
 }
 
 .table td {
-    @apply px-5 pl-5 p-3 bg-gray-100 text-xl;
+    @apply px-5 pl-5 p-3 bg-gray-100;
 }
 
 .table tr:last-child td:first-child {

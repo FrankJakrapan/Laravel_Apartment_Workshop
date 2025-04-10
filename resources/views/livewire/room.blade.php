@@ -106,7 +106,7 @@
     </x-modal>
 
     <x-modal-confirm 
-        wire:model="showModalDelete" 
+        showModalDelete="showModalDelete" 
         title="ลบห้องพัก" 
         text="ต้องการลบห้องพัก {{ $nameForDelete }} หรือไม่ ?" 
         clickConfirm="deleteRoom" 

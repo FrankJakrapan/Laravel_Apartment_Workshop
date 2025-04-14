@@ -9,6 +9,10 @@
                     <i class="fa-solid fa-chart-line me-2"></i>
                     Dashboard
                 </li>
+                <li wire:click="changeMenu('billing')"@if($currentMenu == 'billing') class="active" @endif>
+                    <i class="fa-solid fa-wallet me-2"></i>
+                    ใบเสร็จรับเงิน
+                </li>
                 <li wire:click="changeMenu('pay')"@if($currentMenu == 'pay') class="active" @endif>
                     <i class="fa-solid fa-wallet me-2"></i>
                     บันทึกค่าใช้จ่าย
@@ -21,9 +25,9 @@
                     <i class="fa-solid fa-user me-2"></i>
                     ผู้เข้าพัก
                 </li>
-                <li wire:click="changeMenu('user/index')"@if($currentMenu == 'user/index') class="active" @endif>
+                <li wire:click="changeMenu('user')"@if($currentMenu == 'user') class="active" @endif>
                     <i class="fa-solid fa-gear me-2"></i>
-                    Setting
+                    ผู้ใช้งาน
                 </li>
                 <li wire:click="changeMenu('company/index')"@if($currentMenu == 'company/index') class="active" @endif>
                     <i class="fa-solid fa-building me-2"></i>

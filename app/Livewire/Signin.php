@@ -40,6 +40,7 @@ class Signin extends Component
                 // Auth::loginUsingId($user->id);
                 session()->put('user_id', $user->id);
                 session()->put('user_name', $user->name);
+                session()->put('user_level', $user->level);
 
                 $this->redirect('/dashboard');
             }else{

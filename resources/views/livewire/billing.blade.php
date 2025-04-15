@@ -216,7 +216,7 @@
             </div>
             <div class="w-1/2 text-right">
                 <a class="ms-3 bg-green-500 text-white px-5 py-2 rounded-lg shadow-md hover:bg-green-600"
-                    href="print-invoice/{{ $id }}" target="_blank">
+                    href="print-billing/{{ $id }}" target="_blank">
                     <i class="fa fa-print mr-2"></i>
                     พิมพ์ใบเสร็จรับเงิน
                 </a>

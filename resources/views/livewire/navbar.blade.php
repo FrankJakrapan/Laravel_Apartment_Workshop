@@ -2,7 +2,7 @@
     <div class="flex items-center justify-between">
         <div>
             <i class="fa-solid fa-user text-xl me-2"></i>
-            <span class="username text-2xl">{{ $user_name }}</span>
+            <span class="username text-2xl">{{ $user_name }} [ {{ $userLevel }} ] </span>
         </div>
         <div>
             <button

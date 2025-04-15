@@ -25,3 +25,6 @@ Route::middleware([Authenticate::class])->group(function () {
     Route::get('/print-billing/{billingId}', [BillingController::class, 'printBilling']);
     Route::get('print-all', [BillingController::class, 'printAll']);
 });
+
+
+//สไลด์ 344 วิดิโอ 24

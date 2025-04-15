@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ใบแจ้งค่าเช่า</title> <!-- กำหนด title เพียงครั้งเดียว -->
+</head>
+<body>
+
 @foreach($billings as $billing)
     <div style="page-break-after: always; padding: 40px; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f7f8fa; border-radius: 10px;">
         <div style="text-align: center; margin-bottom: 30px;">
@@ -70,3 +79,6 @@
 <script>
     window.print();
 </script>
+
+</body>
+</html>

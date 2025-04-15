@@ -1,61 +1,82 @@
-<h3>ใบแจ้งค่าเช่า</h3>
-<h4>{{ $organization->name }}</h4>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ใบแจ้งค่าเช่า</title> <!-- กำหนด title -->
+</head>
+<body>
 
-<div>ของเดือน {{ date('m/Y', strtotime($billing->created_at)) }}</div>
-<div>ห้องที่ : {{ $billing->room->name }}</div>
-<div>ชื่อผู้เช่า : {{ $billing->getCustomer()->name }}</div>
-<div>เบอร์โทรศัพท์ : {{ $billing->getCustomer()->phone }}</div>
+<div style="page-break-after: always; padding: 40px; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f7f8fa; border-radius: 10px;">
+    <div style="text-align: center; margin-bottom: 30px;">
+        <h3 style="font-size: 30px; color: #333; font-weight: bold;">ใบแจ้งค่าเช่า</h3>
+        <h4 style="font-size: 22px; color: #777;">{{ $organization->name }}</h4>
+        <p style="color: #888; font-size: 16px;">ของเดือน {{ date('m/Y', strtotime($billing->created_at)) }}</p>
+    </div>
 
-<table width="100%" cellpadding="8" cellspacing="0" style="margin-top: 10px; border-collapse: collapse" border="1">
+    <div style="margin-bottom: 30px;">
+        <div><strong style="color: #555;">ห้องที่:</strong> <span style="color: #333;">{{ $billing->room->name }}</span></div>
+        <div><strong style="color: #555;">ชื่อผู้เช่า:</strong> <span style="color: #333;">{{ $billing->getCustomer()->name }}</span></div>
+        <div><strong style="color: #555;">เบอร์โทรศัพท์:</strong> <span style="color: #333;">{{ $billing->getCustomer()->phone }}</span></div>
+    </div>
 
-    <thead>
-        <tr style="background-color: #c8c7c7;">
-            <td>รายการ</td>
-            <td align="right" width="100px">ราคา</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ค่าเช่า</td>
-            <td align="right" width="100px">{{ number_format($billing->amount_rent) }}</td>
-        </tr>
-        <tr>
-            <td>ค่าน้ำ</td>
-            <td align="right" width="100px">{{ number_format($billing->amount_water) }}</td>
-        </tr>
-        <tr>
-            <td>ค่าไฟ</td>
-            <td align="right" width="100px">{{ number_format($billing->amount_electric) }}</td>
-        </tr>
-        <tr>
-            <td>ค่าอินเตอร์เน็ต</td>
-            <td align="right" width="100px">{{ number_format($billing->amount_internet) }}</td>
-        </tr>
-        <tr>
-            <td>ค่าฟิตเนส</td>
-            <td align="right" width="100px">{{ number_format($billing->amount_fitness) }}</td>
-        </tr>
-        <tr>
-            <td>ค่าซักรีด</td>
-            <td align="right" width="100px">{{ number_format($billing->amount_wash) }}</td>
-        </tr>
-        <tr>
-            <td>ค่าเก็บขยะ</td>
-            <td align="right" width="100px">{{ number_format($billing->amount_bin) }}</td>
-        </tr>
-        <tr>
-            <td>ค่าอื่นๆ</td>
-            <td align="right" width="100px">{{ number_format($billing->amount_etc) }}</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td align="right" style="font-weight: bold">รวม</td>
-            <td align="right" style="background-color: #c8c7c7;">{{ number_format($billing->sumAmount()) }}</td>
-        </tr>
-    </tfoot>
-</table>
+    <table width="100%" cellpadding="8" cellspacing="0" style="margin-top: 20px; border-collapse: collapse; font-size: 14px; background-color: #ffffff; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+        <thead style="background-color: #4e73df; color: white;">
+            <tr>
+                <td style="text-align: left; padding: 12px 20px; font-weight: bold;">รายการ</td>
+                <td style="text-align: right; padding: 12px 20px; font-weight: bold; width: 120px;">ราคา</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #f9f9f9;">
+                <td style="padding-left: 20px;">ค่าเช่า</td>
+                <td style="text-align: right; padding-right: 20px;">{{ number_format($billing->amount_rent) }}</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding-left: 20px;">ค่าน้ำ</td>
+                <td style="text-align: right; padding-right: 20px;">{{ number_format($billing->amount_water) }}</td>
+            </tr>
+            <tr style="background-color: #f9f9f9;">
+                <td style="padding-left: 20px;">ค่าไฟ</td>
+                <td style="text-align: right; padding-right: 20px;">{{ number_format($billing->amount_electric) }}</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding-left: 20px;">ค่าอินเตอร์เน็ต</td>
+                <td style="text-align: right; padding-right: 20px;">{{ number_format($billing->amount_internet) }}</td>
+            </tr>
+            <tr style="background-color: #f9f9f9;">
+                <td style="padding-left: 20px;">ค่าฟิตเนส</td>
+                <td style="text-align: right; padding-right: 20px;">{{ number_format($billing->amount_fitness) }}</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding-left: 20px;">ค่าซักรีด</td>
+                <td style="text-align: right; padding-right: 20px;">{{ number_format($billing->amount_wash) }}</td>
+            </tr>
+            <tr style="background-color: #f9f9f9;">
+                <td style="padding-left: 20px;">ค่าเก็บขยะ</td>
+                <td style="text-align: right; padding-right: 20px;">{{ number_format($billing->amount_bin) }}</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding-left: 20px;">ค่าอื่นๆ</td>
+                <td style="text-align: right; padding-right: 20px;">{{ number_format($billing->amount_etc) }}</td>
+            </tr>
+        </tbody>
+        <tfoot style="background-color: #4e73df; color: white;">
+            <tr>
+                <td style="text-align: right; padding-right: 20px; font-weight: bold;">รวม</td>
+                <td style="text-align: right; padding-right: 20px; font-weight: bold;">{{ number_format($billing->sumAmount()) }}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <p style="font-size: 12px; color: #777;">ใบแจ้งค่าเช่านี้ใช้สำหรับการอ้างอิงเท่านั้น</p>
+    </div>
+</div>
 
 <script>
     window.print();
 </script>
+
+</body>
+</html>
